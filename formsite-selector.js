@@ -35,9 +35,11 @@ function validateConfig() {
 
 function getForms(val) {
   $.ajax({
-    url: config.apiEndpoint,
+    url: "https://cors-anywhere.herokuapp.com/" + config.apiEndpoint,
     dataType: "json",
-    headers: { Authorization: "bearer " + config.apiKey },
+    headers: {
+      Authorization: "bearer " + config.apiKey,
+    },
     success: function (response) {
       forms = response.forms;
       fillDropDown(val);
