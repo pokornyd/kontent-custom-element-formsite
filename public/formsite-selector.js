@@ -33,12 +33,24 @@ function validateConfig() {
   }
 }
 
+// url: "https://cors-anywhere.herokuapp.com/" + ,
+//     dataType: "json",
+//     headers: {
+//       Authorization: "bearer " + config.apiKey,
+//     },
+//     success: function (response) {
+//       forms = response.forms;
+//       fillDropDown(val);
+//     },
+
 function getForms(val) {
   $.ajax({
-    url: "https://cors-anywhere.herokuapp.com/" + config.apiEndpoint,
+    type: "POST",
+    url: "https://localhost:3000/",
     dataType: "json",
-    headers: {
-      Authorization: "bearer " + config.apiKey,
+    data: {
+      endpoint: config.apiEndpoint,
+      key: config.apiKey,
     },
     success: function (response) {
       forms = response.forms;
