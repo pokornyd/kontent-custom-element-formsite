@@ -35,7 +35,7 @@ function validateConfig() {
 
 function getForms(val) {
   $.ajax({
-    url: "https://cors-anywhere.herokuapp.com/" + config.apiEndpoint,
+    url: "https://safelife-cors-formsite.netlify.app/" + config.apiEndpoint,
     dataType: "json",
     headers: {
       Authorization: "bearer " + config.apiKey,
